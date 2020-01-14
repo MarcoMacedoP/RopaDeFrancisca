@@ -2,6 +2,8 @@ import { Layout } from "../components/Layout";
 
 export default () => (
   <Layout>
-    <p>hello there</p>
+    <h1>
+      Ropa sustentable <span aria-label="plant">🌱</span>
+    </h1>
   </Layout>
 );
