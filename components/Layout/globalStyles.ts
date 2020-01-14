@@ -5,6 +5,10 @@ export default css.global`
     font-size: 16px;
     font-family: Helvetica;
   }
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
 `;
 
 export const normalizedStyles = css.global`
