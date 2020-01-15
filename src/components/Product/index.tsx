@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button } from "../Button";
-type ProductProps = {
+export type ProductProps = {
   name?: string;
   image?: string;
   price?: string;
