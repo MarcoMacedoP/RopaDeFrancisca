@@ -29,9 +29,9 @@ export const Modal: React.FC<ModalProps> = props => {
 
 const ModalComponent = ({ children, onClose }) => (
   <>
-    <div className="modal-background" onClick={onClose} />
     <div className="modal-container">
-      <div className="modal">
+      <div className="modal-background" onClick={onClose} />
+      <div className="modal" onClick={event => event.preventDefault()}>
         <div className="icon-container">
           <Icon value="close" onClick={onClose} />
         </div>
