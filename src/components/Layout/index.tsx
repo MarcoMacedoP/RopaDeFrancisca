@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Icon } from "../Icon";
 import globalStyles, { normalizedStyles } from "./globalStyles";
 import { useModal } from "../../hooks/useModal";
-import { Modal } from "../Modal";
+import { CartModal } from "../CartModal";
 
 export type LayoutProps = {};
 
@@ -51,7 +51,7 @@ export const Layout: React.FC<LayoutProps> = props => {
       >
         <Icon value="shopping_cart" />
       </button>
-      <Modal isOpen={isCartModalOpen} onClose={toggleCartModal} />
+      <CartModal isOpen={isCartModalOpen} onClose={toggleCartModal} />
       {/* ---------Modal cart end -----*/}
 
       <style jsx global>

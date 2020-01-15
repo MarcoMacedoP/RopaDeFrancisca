@@ -2,7 +2,7 @@ import * as React from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "../Icon";
 
-type ModalProps = {
+export type ModalProps = {
   onClose: boolean | (() => void);
   isOpen: boolean | (() => void);
 };
