@@ -4,19 +4,25 @@ import { ProductProps } from "../components/Product";
 
 export interface GlobalContextInterface {
   cart: Array<ProductProps>;
+  products: ProductProps[];
+  addProductToCart: Function;
 }
 const initialState: GlobalContextInterface = {
-  cart: []
+  products: [],
+  cart: [],
+  addProductToCart: (product: ProductProps) => {
+    initialState.cart.push(product);
+  }
 };
 export const GlobalContext = React.createContext(initialState);
 
 function App({ Component, pageProps }) {
   return (
-    <Layout>
-      <GlobalContext.Provider value={initialState}>
+    <GlobalContext.Provider value={initialState}>
+      <Layout>
         <Component {...pageProps} />
-      </GlobalContext.Provider>
-    </Layout>
+      </Layout>
+    </GlobalContext.Provider>
   );
 }
 export default App;

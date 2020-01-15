@@ -1,11 +1,17 @@
 import * as React from "react";
 import Link from "next/link";
+import { Icon } from "../Icon";
 import globalStyles, { normalizedStyles } from "./globalStyles";
+import { useModal } from "../../hooks/useModal";
+import { Modal } from "../Modal";
+
 export type LayoutProps = {};
 
 export const Layout: React.FC<LayoutProps> = props => {
+  const [isCartModalOpen, toggleCartModal] = useModal();
+
   return (
-    <div>
+    <>
       <nav>
         <Link href="/">
           <a>
@@ -38,6 +44,15 @@ export const Layout: React.FC<LayoutProps> = props => {
       </nav>
 
       <main> {props.children} </main>
+      {/* ---------Modal cart -----*/}
+      <button
+        className="cart-float-button"
+        onClick={() => typeof toggleCartModal !== "boolean" && toggleCartModal()}
+      >
+        <Icon value="shopping_cart" />
+      </button>
+      <Modal isOpen={isCartModalOpen} onClose={toggleCartModal} />
+      {/* ---------Modal cart end -----*/}
 
       <style jsx global>
         {normalizedStyles}
@@ -70,7 +85,12 @@ export const Layout: React.FC<LayoutProps> = props => {
         main {
           padding: 2rem;
         }
+        .cart-float-button {
+          position: fixed;
+          bottom: 1rem;
+          right: 5rem;
+        }
       `}</style>
-    </div>
+    </>
   );
 };

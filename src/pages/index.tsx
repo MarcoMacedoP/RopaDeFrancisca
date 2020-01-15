@@ -1,4 +1,3 @@
-import { Layout } from "../components/Layout";
 import { Product } from "../components/Product";
 export default () => (
   <>
