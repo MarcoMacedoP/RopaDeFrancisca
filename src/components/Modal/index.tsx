@@ -1,28 +1,20 @@
 import * as React from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "../Icon";
+import { useMountModal } from "../../hooks/modals";
 
 export type ModalProps = {
   onClose: boolean | (() => void);
   isOpen: boolean | (() => void);
 };
+
 export const Modal: React.FC<ModalProps> = props => {
-  const ref = React.useRef();
-  const [mounted, setMounted] = React.useState(false);
+  const { domReference, isMounted } = useMountModal(props.isOpen);
 
-  React.useEffect(() => {
-    ref.current = document.querySelector("#modal");
-  });
-
-  React.useEffect(() => {
-    setMounted(typeof props.isOpen === "boolean" && props.isOpen);
-    console.log(mounted);
-  }, [props.isOpen]);
-
-  return mounted
+  return isMounted
     ? createPortal(
         <ModalComponent onClose={props.onClose}>{props.children}</ModalComponent>,
-        ref.current
+        domReference.current
       )
     : null;
 };
