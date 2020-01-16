@@ -1,4 +1,6 @@
-#Folders
+#Unnecesary folders
 node_modules/
 .next/
 .env/
+__pycache__
+.vscode

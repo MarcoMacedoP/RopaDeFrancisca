@@ -11,7 +11,36 @@ Ropa de Francisca is an fullstack ecommerce, with an server builded in python an
   npm run dev
   ```
 - Backend
-  Run this commands to run the backend app.
-  ```
 
-  ```
+1. Activate virtual env with
+
+```
+    python3 -m venv ./backend/ .env
+```
+
+2. set the \$PYTHONPATH with
+
+````
+    cd backend/ && export PYTHONPATH=$PYTHONPATH:$(pwd); && echo $PYTHONPATH
+```npm
+
+Run this commands to run the backend app.
+
+````
+
+npm run server-dev
+
+```
+
+##troubleshooting
+
+- If you're using pylint this can be confused about the directory of python. If you are using VSCode just add this options to the config file:
+
+```
+
+"python.pythonPath": "venv/bin/python",
+"python.linting.pylintPath": "venv/bin/pylint"
+
+```
+
+```
