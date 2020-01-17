@@ -1,20 +1,22 @@
 #core
 import json
 #django 
-from django.http import JsonResponse
-from django.core import serializers
+from django.http import JsonResponse, HttpResponse 
+from django.views import View
+from django.core.serializers import serialize
+
 #models
 from products.models import Products
 # Create your views here.
 
-def products_view(request):
-    #get all products
-    if request.method == 'GET' :
+
+class ProductsView(View):
+    #gets a list of products
+    def get(self, request):
         products = Products.objects.all()
-        print(products)
-        return JsonResponse({'products': 'hello'})
-    #create one product
-    if request.method == 'POST':
+        return JsonResponse({'products':serialize('python', products) })
+    #create a product
+    def post(self, request):
         product = Products()
         data = json.loads(request.body.decode()) 
         product.name =data['name']
@@ -23,10 +25,10 @@ def products_view(request):
         product.image = data['image']
         product.price = data['price']
         product.save()
-        #import pdb; pdb.set_trace()
-        product_json  = serializers.serialize('python', [product])[0]
+        product_json  = serialize('python', [product])[0]
         return JsonResponse({
             'product':product_json, 
             'message': 'Created product'
             })
         
+
