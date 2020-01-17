@@ -20,13 +20,13 @@ Ropa de Francisca is an fullstack ecommerce, with an server builded in python an
 
 2. set the \$PYTHONPATH with
 
-````
-    cd backend/ && export PYTHONPATH=$PYTHONPATH:$(pwd); && echo $PYTHONPATH
-```npm
+```
+    cd backend/ ; export PYTHONPATH=$PYTHONPATH:$(pwd); echo $PYTHONPATH
+```
 
 Run this commands to run the backend app.
 
-````
+```
 
 npm run server-dev
 
@@ -40,7 +40,5 @@ npm run server-dev
 
 "python.pythonPath": "venv/bin/python",
 "python.linting.pylintPath": "venv/bin/pylint"
-
-```
 
 ```

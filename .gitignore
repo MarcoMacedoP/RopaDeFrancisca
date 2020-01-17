@@ -4,3 +4,7 @@ node_modules/
 .env/
 __pycache__
 .vscode
+
+#sqlite dbs
+db.sqlite3
+/backend/server/db.sqlite3
