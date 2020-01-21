@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Modal, ModalProps } from "../Modal";
 import { Button } from "../Button";
-import { useCart } from "../../hooks/useCart";
+import { useCart } from "../../shared/hooks/useCart";
 export const CartModal: React.FC<ModalProps> = props => {
   const { cart } = useCart();
   const cartIsEmpty = cart.length === 0;

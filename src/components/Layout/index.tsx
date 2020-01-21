@@ -2,7 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Icon } from "../Icon";
 import globalStyles, { normalizedStyles } from "./globalStyles";
-import { useModal } from "../../hooks/modals";
+import { useModal } from "../../shared/hooks/modals";
 import { CartModal } from "../CartModal";
 
 export type LayoutProps = {};

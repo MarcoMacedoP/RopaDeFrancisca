@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "../Icon";
-import { useMountModal } from "../../hooks/modals";
+import { useMountModal } from "../../shared/hooks/modals";
 
 export type ModalProps = {
   onClose: boolean | (() => void);

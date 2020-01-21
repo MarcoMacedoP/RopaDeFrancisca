@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button } from "../Button";
 import { Toast } from "../Toast";
-import { useCart } from "../../hooks/useCart";
+import { useCart } from "../../shared/hooks/useCart";
 
 export type ProductProps = {
   name?: string;
