@@ -1,5 +1,5 @@
 import * as React from "react";
-import { GlobalContext } from "../pages/_app";
+import { GlobalContext } from "../../pages/_app";
 
 export function useCart() {
   const { cart, addProductToCart } = React.useContext(GlobalContext);
