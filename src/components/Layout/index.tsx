@@ -20,7 +20,7 @@ export const Layout: React.FC<LayoutProps> = props => {
         </Link>
         <ul>
           <li>
-            <Link href="/ropa">
+            <Link href="/products">
               <a>
                 Ropa <span aria-label="t-shirt">👚</span>
               </a>
