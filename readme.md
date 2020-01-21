@@ -15,7 +15,7 @@ Ropa de Francisca is an fullstack ecommerce, with an server builded in python an
 1. Activate virtual env with
 
 ```
-    python3 -m venv ./backend/ .env
+    python3 -m venv ./backend/.env &&  source ./backend/.env/bin/activate
 ```
 
 2. set the \$PYTHONPATH with
